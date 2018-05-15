@@ -22,6 +22,9 @@ namespace Bot3.Dialogs
             // Calculate something for us to return
             int length = (activity.Text ?? string.Empty).Length;
 
+            if (activity.Text.Contains("Jesse"))
+                await context.PostAsync($"I think Jesse is awesome");
+
             // Return our reply to the user
             await context.PostAsync($"You sent {activity.Text} which was {length} characters");
 
